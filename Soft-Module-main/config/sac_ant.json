@@ -1,0 +1,34 @@
+{
+    "agent":"sac",
+    "env_name" : "Ant-v2",
+    "env":{
+        "reward_scale":1,
+        "obs_norm":false
+    },
+    "replay_buffer":{
+        "size": 1e6
+    },
+    "net":{ 
+        "hidden_shapes": [256,256],
+        "append_hidden_shapes":[]        
+    },
+    "collector":{
+        "epoch_frames": 200,
+        "max_episode_frames" : 200,
+        "eval_episodes" : 3
+    },
+    "general_setting": {
+        "discount" : 0.99,
+        "pretrain_epochs" : 2,
+        "num_epochs" : 3000,
+        "batch_size" : 256,
+        "min_pool" : 10000,
+
+        "target_hard_update_period" : 1000,
+        "use_soft_update" : true,
+        "tau" : 0.005,
+        "opt_times" : 1000
+    },
+    "sac":{
+    }
+}
